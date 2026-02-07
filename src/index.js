@@ -7,9 +7,10 @@ const config = require("./config/config");
 const logger = require("./config/logger"); 
 console.log("CONFIG MONGODB URL =", config.mongoose.url);
 
-mongoose
-  .connect(config.mongoose.url, config.mongoose.options)
-  .then(() => {
+mongoose.connect(config.mongoose.url, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+}).then(() => {
     logger.info("Connected to MongoDB");
     app.listen(config.port, () => {
       logger.info(`Listening to port ${config.port}`);
