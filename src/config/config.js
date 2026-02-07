@@ -34,11 +34,7 @@ module.exports = {
   // Set mongoose configuration
   mongoose: {
   url: envVars.MONGODB_URL.trim() + (envVars.NODE_ENV === "test" ? "-test" : ""),
-    options: {
-      useCreateIndex: true,
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    },
+    options: {},
   },
   default_wallet_money: DEFAULT_WALLET_MONEY,
   default_payment_option: DEFAULT_PAYMENT_OPTION,
